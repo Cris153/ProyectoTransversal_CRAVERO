@@ -12,11 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadCravero.entidades.Alumno;
 
@@ -34,7 +30,7 @@ public class AlumnoData {
     }
     
     public Alumno buscarAlumnoPorId(int id){
-        String buscarPorId="SELECT dni, apellido, nombre, fecha_nacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
+        String buscarPorId="SELECT * FROM alumno WHERE idAlumno = ? AND estado = 1";
         Alumno alumno = null;
         try {
             PreparedStatement ps = conexion.prepareStatement(buscarPorId);
@@ -65,7 +61,7 @@ public class AlumnoData {
     }
     
     public Alumno buscarAlumnoPorDni(int dni){
-        String buscarPorDni="SELECT idAlumno, dni, apellido, nombre, fecha_nacimiento FROM alumno WHERE dni = ? AND estado = 1";
+        String buscarPorDni="SELECT * FROM alumno WHERE dni = ? AND estado = 1";
         Alumno alumno = null;
         try {
             PreparedStatement ps = conexion.prepareStatement(buscarPorDni);
@@ -97,8 +93,7 @@ public class AlumnoData {
     
     
     public List<Alumno> listar(){
-        String lista="SELECT idAlumno, dni, apellido, nombre, fecha_nacimiento "
-                + "FROM alumno WHERE estado = 1";
+        String lista="SELECT * FROM alumno WHERE estado = 1";
         
         ArrayList <Alumno> alumnos = new ArrayList<>();
         try {
