@@ -30,9 +30,9 @@ public class Test {
         
         AlumnoData al = new AlumnoData();
         
-        
+        /*
         System.out.println("Cargando alumnos");
-        
+       
         al.cargarAlumno(uno);
         al.cargarAlumno(dos);
         al.cargarAlumno(tre);
@@ -44,7 +44,7 @@ public class Test {
         
         System.out.println("Listando Alumnos");
         
-        for(Alumno alumno: al.listar()){
+        for(Alumno alumno: al.listarAlumnos()){
             System.out.println("---------");
             System.out.println("DNI: " + alumno.getDni());
             System.out.println("Apellido: " + alumno.getApellido());
@@ -59,7 +59,7 @@ public class Test {
         System.out.println("Listando Alumnos");
         
         
-        for(Alumno alumno: al.listar()){
+        for(Alumno alumno: al.listarAlumnos()){
             System.out.println("DNI: " + alumno.getDni());
             System.out.println("Apellido: " + alumno.getApellido());
             System.out.println("Nombre: " + alumno.getNombre());
@@ -85,6 +85,9 @@ public class Test {
 //        System.out.println("Apellido: " + alId.getApellido());
 //        System.out.println("Nombre: " + alId.getNombre());
 //        System.out.println("Fecha Nacimiento: " + alId.getFecha_nac());
+    
+    
+    */
     }
     
 }

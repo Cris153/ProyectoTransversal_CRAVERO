@@ -51,7 +51,7 @@ public class AlumnoData {
                 
                 
             }else{
-                JOptionPane.showMessageDialog(null, "El alumno no fue encontrado");
+                JOptionPane.showMessageDialog(null, "0(cero) COINCIDENCIAS");
             }
                     
         } catch (SQLException ex) {
@@ -92,7 +92,7 @@ public class AlumnoData {
     }
     
     
-    public List<Alumno> listar(){
+    public List<Alumno> listarAlumnos(){
         String lista="SELECT * FROM alumno WHERE estado = 1";
         
         ArrayList <Alumno> alumnos = new ArrayList<>();
@@ -179,14 +179,14 @@ public class AlumnoData {
     }
     
     
-    public void eliminarAlumno(int dni){
+    public void eliminarAlumno(int id){
         
-        String eliminar = "UPDATE alumno SET estado = 0 WHERE dni = ?";
+        String eliminar = "UPDATE alumno SET estado = 0 WHERE idAlumno = ?";
         
         try {
             PreparedStatement ps = conexion.prepareStatement(eliminar);
             
-            ps.setInt(1, dni);
+            ps.setInt(1, id);
             int resultado = ps.executeUpdate();
             
             if(resultado == 1){
