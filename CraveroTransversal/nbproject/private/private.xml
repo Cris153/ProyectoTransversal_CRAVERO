@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/vistas/FormAlumno.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/accesoADatos/MateriaData.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/vistas/ManejoInscripcionesView.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/vistas/MenuView.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/accesoADatos/AlumnoData.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/vistas/AlumnosPorMateriaView.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/vistas/ManipulacionNotasView.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/entidades/Materia.java</file>
+            <file>file:/C:/Users/crist/Desktop/TUDS%20ULP/Laboratorio%20de%20programacion%20I/ProyectoTransversal_CRAVERO/CraveroTransversal/src/universidadCravero/accesoADatos/InscripcionData.java</file>
         </group>
     </open-files>
 </project-private>

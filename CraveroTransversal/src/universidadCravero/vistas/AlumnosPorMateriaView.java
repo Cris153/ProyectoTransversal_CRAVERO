@@ -5,17 +5,48 @@
  */
 package universidadCravero.vistas;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import universidadCravero.accesoADatos.AlumnoData;
+import universidadCravero.accesoADatos.InscripcionData;
+import universidadCravero.accesoADatos.MateriaData;
+import universidadCravero.entidades.Alumno;
+import universidadCravero.entidades.Materia;
+
 /**
  *
  * @author crist
  */
 public class AlumnosPorMateriaView extends javax.swing.JInternalFrame {
+    
+    private List<Alumno> lista_alumnos;
+    private List<Materia> lista_materias;
+    
+    private InscripcionData in_data;
+    private AlumnoData al_data;
+    private MateriaData mat_data;
+    
+    
+    
+    private DefaultTableModel modelo;
 
     /**
      * Creates new form AlumnosPorMateriaView
      */
     public AlumnosPorMateriaView() {
         initComponents();
+        
+        al_data = new AlumnoData();
+        in_data = new InscripcionData();
+        mat_data = new MateriaData();
+        lista_materias = mat_data.listarMaterias();
+        
+        modelo = new DefaultTableModel();
+        
+        cargaCheckMaterias();
+        modeloTabla();
+        eliminarFila();
     }
 
     /**
@@ -27,21 +58,147 @@ public class AlumnosPorMateriaView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jcMaterias = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jbSalir = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+
+        setClosable(true);
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setText("Listado de Alumnos por Materia");
+
+        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jLabel2.setText("Seleccione una materia:");
+
+        jcMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcMateriasActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(120, 120, 120))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(432, 432, 432)
+                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(jLabel2)
+                                .addGap(66, 66, 66)
+                                .addComponent(jcMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jcMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jbSalir)
+                .addGap(31, 31, 31))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jcMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcMateriasActionPerformed
+        eliminarFila();
+        cargaInscriptos();
+    }//GEN-LAST:event_jcMateriasActionPerformed
+    
+    private void cargaInscriptos(){
+        Materia materia = (Materia) jcMaterias.getSelectedItem();
+        List<Alumno> inscriptos = in_data.listarAlumnosPorMateria(materia.getId_materia());
+        for(Alumno a : inscriptos){
+            modelo.addRow(new Object[] {a.getIdAlumno(), a.getDni(), a.getApellido(), a.getNombre()});
+        }  
+    }
+    
+    private void cargaCheckMaterias(){
+        for(Materia item: lista_materias){
+            jcMaterias.addItem(item);
+        }       
+    }
+    
+    private void eliminarFila(){
+        int indice = modelo.getRowCount() -1;
+        
+        for(int i = indice; i >= 0; i--){
+            modelo.removeRow(i);
+        }
+    }
+    
+    
+    private void modeloTabla(){
+        ArrayList<Object> columna = new ArrayList<>();
+        
+        columna.add("Id");
+        columna.add("DNI");
+        columna.add("Apellido");
+        columna.add("Nombre");
+        for(Object o : columna){
+            modelo.addColumn(o);
+        }
+        jTable1.setModel(modelo);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JComboBox<Materia> jcMaterias;
     // End of variables declaration//GEN-END:variables
 }

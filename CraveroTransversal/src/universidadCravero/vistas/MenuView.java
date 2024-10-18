@@ -65,11 +65,13 @@ public class MenuView extends javax.swing.JFrame {
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 546, Short.MAX_VALUE)
+            .addGap(0, 544, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Alumnos");
+        jMenu1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
 
+        jMenuItemAlumnos.setFont(new java.awt.Font("Eras Medium ITC", 1, 12)); // NOI18N
         jMenuItemAlumnos.setText("Formulario Alumno");
         jMenuItemAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +83,9 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Materia");
+        jMenu2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
 
+        jMenuItemMateria.setFont(new java.awt.Font("Eras Medium ITC", 1, 12)); // NOI18N
         jMenuItemMateria.setText("Formulario Materia");
         jMenuItemMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +97,9 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Administración");
+        jMenu3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
 
+        jMenuItemManjInsc.setFont(new java.awt.Font("Eras Medium ITC", 1, 12)); // NOI18N
         jMenuItemManjInsc.setText("Manejo de Inscripciones");
         jMenuItemManjInsc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +108,7 @@ public class MenuView extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItemManjInsc);
 
+        jMenuItemManNotas.setFont(new java.awt.Font("Eras Medium ITC", 1, 12)); // NOI18N
         jMenuItemManNotas.setText("Manipulación de notas");
         jMenuItemManNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +120,10 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Consultas");
+        jMenu4.setFocusable(false);
+        jMenu4.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
 
+        jMenuItemAlmPorMateria.setFont(new java.awt.Font("Eras Medium ITC", 1, 12)); // NOI18N
         jMenuItemAlmPorMateria.setText("Alumnos por materia");
         jMenuItemAlmPorMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +135,12 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Salir");
+        jMenu5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -141,6 +157,7 @@ public class MenuView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlumnosActionPerformed
@@ -205,6 +222,10 @@ public class MenuView extends javax.swing.JFrame {
         desktop.moveToFront(alMatView);
         
     }//GEN-LAST:event_jMenuItemAlmPorMateriaActionPerformed
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMenu5ActionPerformed
 
     /**
      * @param args the command line arguments

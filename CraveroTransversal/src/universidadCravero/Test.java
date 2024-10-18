@@ -10,7 +10,11 @@ import java.time.LocalDate;
 import java.time.Month;
 import universidadCravero.accesoADatos.AlumnoData;
 import universidadCravero.accesoADatos.Conexion;
+import universidadCravero.accesoADatos.InscripcionData;
+import universidadCravero.accesoADatos.MateriaData;
 import universidadCravero.entidades.Alumno;
+import universidadCravero.entidades.Inscripcion;
+import universidadCravero.entidades.Materia;
 
 /**
  *
@@ -23,12 +27,23 @@ public class Test {
      */
     public static void main(String[] args) {
         
-        Alumno uno = new Alumno(43765287, "Cravero", "Cristian", LocalDate.of(2001, 10, 15), true);
-        Alumno dos = new Alumno(40884234, "Perez", "Pablo", LocalDate.of(1997, 12, 24), true);
-        Alumno tre = new Alumno(45264265, "Raposo", "Martin", LocalDate.of(2004, 2, 1), true);
-        Alumno cuatro = new Alumno(42005001, "Martinez", "Lautaro", LocalDate.of(1999, 7, 31), true);
+        //Alumno uno = new Alumno(43765287, "Cravero", "Cristian", LocalDate.of(2001, 10, 15), true);
+        //Alumno dos = new Alumno(40884234, "Perez", "Pablo", LocalDate.of(1997, 12, 24), true);
+        //Alumno tre = new Alumno(45264265, "Raposo", "Martin", LocalDate.of(2004, 2, 1), true);
         
-        AlumnoData al = new AlumnoData();
+        
+//        AlumnoData al = new AlumnoData();
+//        MateriaData matdata = new MateriaData();
+//        
+//        Materia mat = matdata.buscarMateriaPorID(7);
+//        Alumno cuatro = al.buscarAlumnoPorDni(43622515);
+//        
+//        Inscripcion insc = new Inscripcion(cuatro, mat, 9);
+//        
+//        InscripcionData inscData = new InscripcionData();
+//        
+//        inscData.altaInscripcion(insc);
+        
         
         /*
         System.out.println("Cargando alumnos");
